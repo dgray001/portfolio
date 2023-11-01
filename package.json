@@ -1,0 +1,37 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack serve --config webpack.dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgray001/portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dgray001/portfolio/issues"
+  },
+  "homepage": "https://github.com/dgray001/portfolio#readme",
+  "dependencies": {
+    "css-loader": "^6.8.1",
+    "html-loader": "^4.2.0",
+    "lit": "^3.0.1",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.5.0",
+    "webpack": "^5.89.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
