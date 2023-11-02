@@ -2,6 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "declaration": true,
+    "experimentalDecorators": true,
     "module": "es6",
     "moduleResolution": "node",
     "noImplicitAny": true,
@@ -12,6 +13,7 @@
     "sourceMap": true,
     "target": "es6",
     "typeRoots": ["./node_modules/@types"],
+    "useDefineForClassFields": false,
   },
-  "include": ["src"],
+  "include": ["./src"],
 }

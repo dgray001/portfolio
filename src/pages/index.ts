@@ -1,1 +1,3 @@
-console.log('hi');
+import '../components/dwg-index-page';
+
+import '../styles.scss';
