@@ -4,7 +4,7 @@ A site to host a quick frontend portfolio
 
 ## Current Version
 
-v0.1d: DwgTextAnimation
+v0.1e: Update build
 
 ## GitHub Pages Notes
 
