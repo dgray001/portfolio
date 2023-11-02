@@ -1,24 +1,30 @@
 import {html, css, LitElement} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import {customElement, state} from 'lit/decorators.js';
+
+import './dwg-text-animation';
 
 @customElement('dwg-header')
 export class DwgHeader extends LitElement {
   static styles = css`
   #wrapper {
+    height: calc(1.9 * var(--font-size-largest));
+
     > #name {
-      font-size: 28px;
-      font-weight: bold;
+      display: block;
+      font-size: var(--font-size-largest);
+      line-height: calc(1.9 * var(--font-size-largest));
+      margin-left: 1em;
     }
   }
   `;
 
-  @property({type: String})
-  name = 'Somebody';
+  @state()
+  name = 'Daniel Gray';
 
   render() {
     return html`
     <div id="wrapper">
-      <span id="name">Daniel Gray</span>
+      <dwg-text-animation id="name" text="${this.name}"></dwg-text-animation>
     </div>
     `;
   }

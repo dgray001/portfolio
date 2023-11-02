@@ -1,3 +1,16 @@
+
+/** Loop helper function */
+export const loop = (times: number, callback: (i?: number) => void) => {
+  for (let i = 0; i < times; i++) {
+    callback(i);
+  }
+};
+
+/** Awaits a specific amount of time */
+export function untilTimer(timer: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, timer));
+}
+
 /** Detects whether the current browser is a mobile browser */
 export function clientOnMobile() {
   const regex1 = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i;

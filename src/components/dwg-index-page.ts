@@ -13,8 +13,9 @@ export enum Page {
 export class DwgIndexPage extends LitElement {
   static styles = css`
   dwg-header {
+    box-shadow: 0px 2px 2px 2px rgb(200, 200, 200);
     display: block;
-    height: 50px;
+    margin-bottom: 6px;
   }
   `;
 
