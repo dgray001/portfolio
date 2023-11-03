@@ -48,7 +48,7 @@ export class DwgHome extends LitElement {
     flex-flow: column nowrap;
     font-size: var(--font-size-large);
     gap: 1em;
-    margin: 6em auto;
+    margin: 3em auto;
     max-width: 1000px;
     opacity: 0%;
     position: relative;
@@ -60,6 +60,10 @@ export class DwgHome extends LitElement {
       opacity: 100%;
       top: 0;
       transition-property: opacity, top;
+    }
+
+    .content-header {
+      margin-top: 3em;
     }
   }
   `;
@@ -143,8 +147,17 @@ export class DwgHome extends LitElement {
       ></dwg-link>
     </div>
     <div id="content-section">
-      <div>Recent Personal Projects</div>
+      <div class="content-header">Project Highlights</div>
       <dwg-project project="fiddlesticks"></dwg-project>
+      <dwg-project project="missio"></dwg-project>
+      <dwg-project project="lnz"></dwg-project>
+      <dwg-project project="cuf_site"></dwg-project>
+      <div class="content-header">Additional Projects</div>
+      <dwg-project project="calculator"></dwg-project>
+      <dwg-project project="thesis"></dwg-project>
+      <dwg-project project="tetris"></dwg-project>
+      <dwg-project project="rise_of_the_frogs"></dwg-project>
+      <dwg-project project="rust_rise_of_the_frogs"></dwg-project>
     </div>
     `;
   }

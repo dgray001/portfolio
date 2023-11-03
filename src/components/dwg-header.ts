@@ -22,11 +22,11 @@ export class DwgHeader extends LitElement {
     }
 
     > #link-wrapper {
+      align-items: center;
       display: flex;
-      flex-flow: column nowrap;
+      flex-flow: row nowrap;
       font-size: calc(0.4 * var(--font-size-largest));
-      gap: 0.3em;
-      justify-content: center;
+      gap: 2em;
       margin-left: auto;
       margin-right: 2em;
     }
@@ -41,6 +41,7 @@ export class DwgHeader extends LitElement {
     <div id="wrapper">
       <dwg-text-animation id="name" blink text="${this.name}"></dwg-text-animation>
       <div id="link-wrapper">
+        <dwg-link text="Resume" src="resume" href="/files/resume.pdf"></dwg-link>
         <dwg-link text="LinkedIn" src="linkedin" href="https://www.linkedin.com/in/daniel-gray-8a6ba2108/"></dwg-link>
         <dwg-link text="GitHub" src="github" href="https://github.com/dgray001?tab=repositories"></dwg-link>
       </div>

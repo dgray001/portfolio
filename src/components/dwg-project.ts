@@ -42,15 +42,46 @@ export class DwgProject extends LitElement {
       cursor: pointer;
     }
 
-    #header {
-      #title {
+    > #header {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 0.5em;
+
+      > #title {
         font-size: var(--font-size-medium);
         font-weight: bold;
+        margin-right: 2em;
+      }
+
+      > .tech {
+        background-color: rgb(70, 70, 70);
+        border-radius: 0.6em;
+        box-sizing: border-box;
+        color: white;
+        font-size: var(--font-size-small);
+        padding: 0.3em 0.7em;
+
+        &.language {
+          background-color: rgb(90, 20, 20);
+        }
+
+        &.framework {
+          background-color: rgb(90, 90, 20);
+        }
+
+        &.database {
+          background-color: rgb(20, 20, 90);
+        }
+
+        &.tool {
+          background-color: rgb(90, 20, 90);
+        }
       }
     }
 
-    #description {
+    > #description {
       font-size: var(--font-size-small);
+      margin-top: 0.8em;
     }
   }
   `;
@@ -73,12 +104,150 @@ export class DwgProject extends LitElement {
         this.project_data = {
           title: 'Game Lobby',
           description: `
-          A web-based game lobby where users can chat, join rooms, and launch
-          esoteric games. Currently only supports the card game fiddlesticks.
+          A web-based game lobby where users can chat, join rooms, and play
+          esoteric games. Can reconnect you to your room or game if the your
+          connection is lost.
           `,
           link: 'https://fiddlesticks.live',
           technologies: [
-            {name: 'Golang', type: 'lang'},
+            {name: 'Golang', type: 'language'},
+            {name: 'Typescript', type: 'language'},
+            {name: 'Gin', type: 'framework'},
+            {name: 'PostgresQL', type: 'database'},
+            {name: 'GCP', type: 'tool'},
+            {name: 'Webpack', type: 'tool'},
+            {name: 'Sass', type: 'tool'},
+          ],
+        };
+        break;
+      case 'missio':
+        this.project_data = {
+          title: 'Missio Homepage',
+          description: `
+          Helped make website (specifically I made the homepage) of a startup
+          given a design and animation descriptions.
+          `,
+          link: 'https://missio.ai',
+          technologies: [
+            {name: 'Typescript', type: 'language'},
+            {name: 'Next.JS', type: 'framework'},
+            {name: 'Tailwind', type: 'framework'},
+            {name: 'React', type: 'tool'},
+            {name: 'Framer Motion', type: 'tool'},
+          ],
+        };
+        break;
+      case 'lnz':
+        this.project_data = {
+          title: 'LNZ',
+          description: `
+          Desktop RPG
+          `,
+          link: 'https://github.com/dgray001/lnz',
+          technologies: [
+            {name: 'Java', type: 'language'},
+            {name: 'JUnit', type: 'framework'},
+            {name: 'Processing', type: 'framework'},
+            {name: 'Maven', type: 'tool'},
+          ],
+        };
+        break;
+      case 'cuf_site':
+        this.project_data = {
+          title: 'CUF Site',
+          description: `
+          Made website for small non-profit run by a family friend using their
+          design. Work included working with the authorize.net and reCaptcha
+          APIs, user login and profile pages, an admin dashboard, a custom
+          testing library, and data caching all in vanilla JS without external
+          dependencies.
+          `,
+          link: 'https://dgray001.github.io/',
+          technologies: [
+            {name: 'Javascript', type: 'language'},
+            {name: 'PHP', type: 'language'},
+            {name: 'MySQL', type: 'database'},
+            {name: 'MS SQL Server', type: 'database'},
+            {name: 'Apache Server', type: 'tool'},
+          ],
+        };
+        break;
+      case 'calculator':
+        this.project_data = {
+          title: 'Exact Calculator',
+          description: `
+          Command-line calculator returning exact results. Demonstrates
+          interpreter skills of (tokenize => parse => evaluate). Utilizes a
+          versatile AST so extending to further math functionality is
+          programmatically trivial.
+          `,
+          link: 'https://github.com/dgray001/calculator',
+          technologies: [
+            {name: 'Golang', type: 'language'},
+            {name: 'Interpreter', type: 'tool'},
+          ],
+        };
+        break;
+      case 'thesis':
+        this.project_data = {
+          title: '"Mercedes-Benz" Water',
+          description: `
+          Undergraduate thesis project implementing a simple, 2D model of water
+          that mimics the unique thermodynamic characteristics of real water.
+          This model was characterized further than any published research had
+          gone and subsequently used to qualitatively simulate the thermodynamic
+          effects of macromolecular crowding.
+          `,
+          link: 'https://github.com/dgray001/MB/blob/master/thesis.pdf',
+          technologies: [
+            {name: 'Java', type: 'language'},
+            {name: 'Python', type: 'language'},
+            {name: 'MatPlotLib', type: 'tool'},
+            {name: 'Molecular Modeling', type: 'tool'},
+          ],
+        };
+        break;
+      case 'tetris':
+        this.project_data = {
+          title: 'Tetris',
+          description: `Simple implementation of a Tetris-like game in
+          Processing, with support for LAN multiplayer (2 players) and a
+          chatbox, using the Processing library and standard Java libraries.
+          `,
+          link: 'https://github.com/dgray001/Tetris',
+          technologies: [
+            {name: 'Java', type: 'language'},
+            {name: 'Processing', type: 'framework'},
+            {name: 'JUnit', type: 'framework'},
+          ],
+        };
+        break;
+      case 'rise_of_the_frogs':
+        this.project_data = {
+          title: 'Rise of the Frogs',
+          description: `
+          Command-line RPG utilizing only the standard libraries of C++,
+          featuring 3D physics, several maps, and complex turn-based
+          combat. Gain sentience, escape the aquarium, and conquer the world!
+          `,
+          link: 'https://github.com/dgray001/RiseOfTheFrogs',
+          technologies: [
+            {name: 'C++', type: 'language'},
+          ],
+        };
+        break;
+      case 'rust_rise_of_the_frogs':
+        this.project_data = {
+          title: 'Rise of the Frogs (rust ed.)',
+          description: `
+          Command-line RPG similar to the previous C++ version utilizing only
+          the standard library of Rust and select low-level crates. Rise from
+          the bottom of the food chain to develop your frog empire and conquer
+          the universe!
+          `,
+          link: 'https://github.com/dgray001/rise_of_the_frogs_rust',
+          technologies: [
+            {name: 'Rust', type: 'language'},
           ],
         };
         break;

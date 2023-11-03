@@ -26,12 +26,35 @@ export class DwgIndexPage extends LitElement {
     height: var(--height);
     max-height: var(--height);
     min-height: var(--height);
-    margin-top: var(--font-size-larger);
     overflow: auto;
-    padding: var(--font-size-largest);
+    padding: calc(2 * var(--font-size-largest)) var(--font-size-largest) var(--font-size-largest);
 
     #min-height-container {
       min-height: calc(100vh - 1.9 * var(--font-size-largest));
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(122, 89, 89);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    border-radius: 7px;
+  
+    &:hover {
+      background: rgb(92, 70, 70);
+      border: none;
+    }
+  
+    &:active {
+      background: rgb(70, 53, 53);
     }
   }
   `;
