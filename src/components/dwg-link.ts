@@ -11,6 +11,7 @@ export class DwgLink extends LitElement {
     flex-flow: row nowrap;
     gap: 0.5em;
     height: 2em;
+    width: fit-content;
 
     &:link, :link {
       color: rgb(51, 255, 255);
@@ -32,8 +33,10 @@ export class DwgLink extends LitElement {
       color: rgb(50, 140, 140) !important;
     }
 
-    img {
+    > #img {
       height: 1.6em;
+      max-height: 1.6em;
+      min-height: 1.6em;
     }
 
     span {
@@ -54,7 +57,7 @@ export class DwgLink extends LitElement {
   render() {
     return html`
     <a href="${this.href}" target="_blank">
-      <img draggable="false" alt="" src="/images/${this.src}.png">
+      <img id="img" draggable="false" alt="" src="/images/${this.src}.png">
       <span>${this.text}</span>
     </a>
     `;

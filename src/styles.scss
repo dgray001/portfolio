@@ -1,4 +1,6 @@
 body {
+  --text-color: rgb(51, 255, 51);
+
   --font-size-title: calc(14px + 2.3vw);
   --font-size-largest: calc(12px + 1.8vw);
   --font-size-larger: calc(12px + 1.5vw);
@@ -18,7 +20,7 @@ body {
   }
 
   background-color: rgb(40, 40, 40);
-  color: rgb(51, 255, 51);
+  color: var(--text-color);
   font-family: monospace;
   margin: 0px;
   padding: 0px;

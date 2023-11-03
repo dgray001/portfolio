@@ -21,8 +21,18 @@ export class DwgIndexPage extends LitElement {
   }
 
   #content {
+    box-sizing: border-box;
+    --height: calc(100vh - 3 * var(--font-size-largest));
+    height: var(--height);
+    max-height: var(--height);
+    min-height: var(--height);
     margin-top: var(--font-size-larger);
-    padding: var(--font-size-large);
+    overflow: auto;
+    padding: var(--font-size-largest);
+
+    #min-height-container {
+      min-height: calc(100vh - 1.9 * var(--font-size-largest));
+    }
   }
   `;
 
@@ -32,7 +42,7 @@ export class DwgIndexPage extends LitElement {
   @property({type: Boolean})
   client_on_mobile = false;
 
-  connectedCallback(): void {
+  async connectedCallback() {
     super.connectedCallback();
     this.client_on_mobile = clientOnMobile();
     if (this.client_on_mobile) {
@@ -53,7 +63,9 @@ export class DwgIndexPage extends LitElement {
     return html`
     <dwg-header></dwg-header>
     <div id="content">
-      ${this.pageComponent()}
+      <div id="min-height-container">
+        ${this.pageComponent()}
+      </div>
     </div>
     `;
   }
