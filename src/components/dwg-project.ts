@@ -137,18 +137,23 @@ export class DwgProject extends LitElement {
           ],
         };
         break;
-      case 'lnz':
+      case 'pocket_search':
         this.project_data = {
-          title: 'LNZ',
-          description: `
-          Desktop RPG
+          title: 'Pocket Search',
+          description: `Graduate school side-project to search PDB database for
+          proteins with pockets of an input size/shape. The program uses VASP,
+          fpocket, the python Bio module, and some data analysis to find and
+          rank possible proteins that have pockets similar in size/shape to the
+          input protein.
           `,
-          link: 'https://github.com/dgray001/lnz',
+          link: 'https://github.com/dgray001/pocketSearch',
           technologies: [
-            {name: 'Java', type: 'language'},
-            {name: 'JUnit', type: 'framework'},
-            {name: 'Processing', type: 'framework'},
-            {name: 'Maven', type: 'tool'},
+            {name: 'Python', type: 'language'},
+            {name: 'C', type: 'language'},
+            {name: 'PDB', type: 'database'},
+            {name: 'VASP', type: 'tool'},
+            {name: 'fpocket', type: 'tool'},
+            {name: 'Molecular Modeling', type: 'tool'},
           ],
         };
         break;
@@ -188,22 +193,21 @@ export class DwgProject extends LitElement {
           ],
         };
         break;
-      case 'thesis':
+      case 'lnz':
         this.project_data = {
-          title: '"Mercedes-Benz" Water',
+          title: 'LNZ',
           description: `
-          Undergraduate thesis project implementing a simple, 2D model of water
-          that mimics the unique thermodynamic characteristics of real water.
-          This model was characterized further than any published research had
-          gone and subsequently used to qualitatively simulate the thermodynamic
-          effects of macromolecular crowding.
+          Relatively large (>100k lines of code) desktop RPG with 3D graphics
+          and pseudo-physics, infinite terrain generation, and complex parallel
+          computations. Also includes a button/form library written from scratch
+          with testing in JUnit.
           `,
-          link: 'https://github.com/dgray001/MB/blob/master/thesis.pdf',
+          link: 'https://github.com/dgray001/LNZ',
           technologies: [
             {name: 'Java', type: 'language'},
-            {name: 'Python', type: 'language'},
-            {name: 'MatPlotLib', type: 'tool'},
-            {name: 'Molecular Modeling', type: 'tool'},
+            {name: 'JUnit', type: 'framework'},
+            {name: 'Processing', type: 'framework'},
+            {name: 'Maven', type: 'tool'},
           ],
         };
         break;
@@ -233,6 +237,25 @@ export class DwgProject extends LitElement {
           link: 'https://github.com/dgray001/RiseOfTheFrogs',
           technologies: [
             {name: 'C++', type: 'language'},
+          ],
+        };
+        break;
+      case 'thesis':
+        this.project_data = {
+          title: '"Mercedes-Benz" Water',
+          description: `
+          Undergraduate thesis project implementing a simple, 2D model of water
+          that mimics the unique thermodynamic characteristics of real water.
+          This model was characterized further than any published research had
+          gone and subsequently used to qualitatively simulate the thermodynamic
+          effects of macromolecular crowding.
+          `,
+          link: 'https://github.com/dgray001/MB/blob/master/thesis.pdf',
+          technologies: [
+            {name: 'Java', type: 'language'},
+            {name: 'Python', type: 'language'},
+            {name: 'MatPlotLib', type: 'tool'},
+            {name: 'Molecular Modeling', type: 'tool'},
           ],
         };
         break;
