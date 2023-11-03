@@ -1,6 +1,8 @@
 import {html, css, LitElement} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
 
+import {clientOnMobile, until} from '../scripts/util';
+
 import './dwg-text-animation';
 import './dwg-link';
 
@@ -30,11 +32,37 @@ export class DwgHeader extends LitElement {
       margin-left: auto;
       margin-right: 2em;
     }
+
+    #hamburger {
+
+    }
   }
   `;
 
   @state()
   name = 'Daniel Gray';
+
+  @state()
+  link_wrapper: HTMLDivElement = undefined;
+
+  @state()
+  hamburger: HTMLButtonElement = undefined;
+
+  async connectedCallback() {
+    super.connectedCallback();
+    await until(() => {
+      this.link_wrapper = this.shadowRoot.querySelector('#link-wrapper');
+      this.hamburger = this.shadowRoot.querySelector('#hamburger');
+      return !!this.link_wrapper && !!this.hamburger;
+    });
+    if (clientOnMobile()) {
+      this.link_wrapper.classList.add('mobile');
+      this.hamburger.classList.add('mobile');
+      this.hamburger.addEventListener('click', () => {
+        this.link_wrapper.classList.toggle('show');
+      });
+    }
+  }
 
   render() {
     return html`
@@ -45,6 +73,7 @@ export class DwgHeader extends LitElement {
         <dwg-link text="LinkedIn" src="linkedin" href="https://www.linkedin.com/in/daniel-gray-8a6ba2108/"></dwg-link>
         <dwg-link text="GitHub" src="github" href="https://github.com/dgray001?tab=repositories"></dwg-link>
       </div>
+      <button id="hamburger"><img draggable="false" alt="" src="/images/hamburger.png"></button>
     </div>
     `;
   }

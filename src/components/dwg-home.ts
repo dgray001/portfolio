@@ -21,7 +21,7 @@ export class DwgHome extends LitElement {
       display: block;
       font-size: var(--font-size-large);
     }
-  
+
     > .body {
       display: block;
       font-size: var(--font-size-small);

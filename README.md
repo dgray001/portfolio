@@ -4,7 +4,7 @@ A site to host a quick frontend portfolio
 
 ## Current Version
 
-v0.1k: Finished project descriptions
+v0.1k2: lol
 
 ## GitHub Pages Notes
 
