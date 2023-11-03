@@ -4,7 +4,7 @@ A site to host a quick frontend portfolio
 
 ## Current Version
 
-v0.1h: Hero v2
+v0.1h2: fix deploy
 
 ## GitHub Pages Notes
 
