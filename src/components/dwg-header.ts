@@ -23,18 +23,91 @@ export class DwgHeader extends LitElement {
       margin-left: 1em;
     }
 
+    > #hamburger-overlay {
+      background-color: rgba(240, 240, 240, 0.3);
+      height: 110vh;
+      left: 0;
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      transition: opacity 0.7s ease;
+      width: 100vw;
+      z-index: 2;
+
+      &:not(.show) {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
     > #link-wrapper {
       align-items: center;
-      display: flex;
+      display: none;
       flex-flow: row nowrap;
       font-size: calc(0.4 * var(--font-size-largest));
       gap: 2em;
+      display: none;
       margin-left: auto;
       margin-right: 2em;
+
+      &.not-mobile {
+        display: flex;
+      }
+
+      &.mobile {
+        background-color: rgb(40, 40, 40);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        position: absolute;
+        right: -40vw;
+        top: 0;
+        transition: right 0.7s ease;
+        width: 40vw;
+        z-index: 3;
+
+        :first-child {
+          margin-top: calc(2.4 * var(--font-size-largest));
+        }
+
+        &.show {
+          right: 0;
+        }
+      }
     }
 
     #hamburger {
+      background-color: rgba(200, 200, 200, 0.1);
+      border: none;
+      border-radius: calc(0.8 * var(--font-size-largest));
+      height: calc(1.6 * var(--font-size-largest));
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      right: calc(0.4 * var(--font-size-largest));
+      top: calc(0.2 * var(--font-size-largest));
+      width: calc(1.6 * var(--font-size-largest));
+      z-index: 4;
 
+      &:not(.mobile) {
+        display: none;
+      }
+
+      &:hover {
+        background-color: rgba(200, 200, 200, 0.3);
+      }
+
+      &:active {
+        background-color: rgba(200, 200, 200, 0.5);
+      }
+
+      > img {
+        height: 100%;
+        min-height: 0;
+        min-width: 0;
+        width: 100%;
+      }
     }
   }
   `;
@@ -48,19 +121,26 @@ export class DwgHeader extends LitElement {
   @state()
   hamburger: HTMLButtonElement = undefined;
 
+  @state()
+  hamburger_overlay: HTMLDivElement = undefined;
+
   async connectedCallback() {
     super.connectedCallback();
     await until(() => {
       this.link_wrapper = this.shadowRoot.querySelector('#link-wrapper');
       this.hamburger = this.shadowRoot.querySelector('#hamburger');
-      return !!this.link_wrapper && !!this.hamburger;
+      this.hamburger_overlay = this.shadowRoot.querySelector('#hamburger-overlay');
+      return !!this.link_wrapper && !!this.hamburger && !!this.hamburger_overlay;
     });
     if (clientOnMobile()) {
       this.link_wrapper.classList.add('mobile');
       this.hamburger.classList.add('mobile');
       this.hamburger.addEventListener('click', () => {
         this.link_wrapper.classList.toggle('show');
+        this.hamburger_overlay.classList.toggle('show');
       });
+    } else {
+      this.link_wrapper.classList.add('not-mobile');
     }
   }
 
@@ -68,6 +148,7 @@ export class DwgHeader extends LitElement {
     return html`
     <div id="wrapper">
       <dwg-text-animation id="name" blink text="${this.name}"></dwg-text-animation>
+      <div id="hamburger-overlay"></div>
       <div id="link-wrapper">
         <dwg-link text="Resume" src="resume" href="/files/resume.pdf"></dwg-link>
         <dwg-link text="LinkedIn" src="linkedin" href="https://www.linkedin.com/in/daniel-gray-8a6ba2108/"></dwg-link>

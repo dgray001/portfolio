@@ -4,7 +4,7 @@ A site to host a quick frontend portfolio
 
 ## Current Version
 
-v0.1k2: lol
+v0.1l: Hamburger for mobile
 
 ## GitHub Pages Notes
 
