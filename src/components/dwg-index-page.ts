@@ -4,8 +4,10 @@ import {customElement, property} from 'lit/decorators.js';
 import {clientOnMobile} from '../scripts/util';
 
 import './dwg-header';
+import './dwg-home';
 
 export enum Page {
+  UNKNOWN,
   HOME,
 }
 
@@ -16,6 +18,11 @@ export class DwgIndexPage extends LitElement {
     box-shadow: 0px 2px 2px 2px rgb(200, 200, 200);
     display: block;
     margin-bottom: 6px;
+  }
+
+  #content {
+    margin-top: var(--font-size-larger);
+    padding: var(--font-size-large);
   }
   `;
 
@@ -36,7 +43,7 @@ export class DwgIndexPage extends LitElement {
   pageComponent() {
     switch(this.page) {
       case Page.HOME:
-        return html`<div>home!</div>`;
+        return html`<dwg-home></dwg-home>`;
       default:
         return html`<p>404</p>`;
     }
@@ -45,7 +52,9 @@ export class DwgIndexPage extends LitElement {
   render() {
     return html`
     <dwg-header></dwg-header>
-    ${this.pageComponent()}
+    <div id="content">
+      ${this.pageComponent()}
+    </div>
     `;
   }
 }

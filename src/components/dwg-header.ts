@@ -23,7 +23,8 @@ export class DwgHeader extends LitElement {
       display: flex;
       flex-flow: column nowrap;
       font-size: calc(0.4 * var(--font-size-largest));
-      gap: 0.5em;
+      gap: 0.3em;
+      justify-content: center;
       margin-left: auto;
       margin-right: 2em;
     }
@@ -36,7 +37,7 @@ export class DwgHeader extends LitElement {
   render() {
     return html`
     <div id="wrapper">
-      <dwg-text-animation id="name" text="${this.name}"></dwg-text-animation>
+      <dwg-text-animation id="name" blink text="${this.name}"></dwg-text-animation>
       <div id="link-wrapper">
         <dwg-link text="LinkedIn" src="linkedin" href="https://www.linkedin.com/in/daniel-gray-8a6ba2108/"></dwg-link>
         <dwg-link text="GitHub" src="github" href="https://github.com/dgray001?tab=repositories"></dwg-link>

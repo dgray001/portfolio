@@ -4,7 +4,7 @@ A site to host a quick frontend portfolio
 
 ## Current Version
 
-v0.1f: DwgLink
+v0.1g: Initial hero
 
 ## GitHub Pages Notes
 
