@@ -11,6 +11,8 @@ export class DwgHeader extends LitElement {
     display: flex;
     flex-flow: row nowrap;
     height: calc(2 * var(--font-size-largest));
+    margin: 0 auto;
+    max-width: 1500px;
 
     > #name {
       display: block;

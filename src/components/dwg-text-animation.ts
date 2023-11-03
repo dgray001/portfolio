@@ -58,6 +58,7 @@ export class DwgTextAnimation extends LitElement {
 
   async connectedCallback() {
     super.connectedCallback();
+    await untilTimer(this.animation_delay);
     this.animation_type = parseInt(this.animation_type.toString()) ?? AnimationType.UNKNOWN;
     await until(() => {
       this.wrapper = this.shadowRoot.querySelector('#wrapper');
@@ -66,7 +67,6 @@ export class DwgTextAnimation extends LitElement {
     if (this.justify) {
       this.wrapper.classList.add('justified');
     }
-    await untilTimer(this.animation_delay);
     switch(this.animation_type) {
       case AnimationType.TYPING:
         setTimeout(
