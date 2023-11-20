@@ -84,8 +84,9 @@ export class DwgHome extends LitElement {
 
   @state()
   body_text2 = `
-  In other words, I'm an <a href="https://agilemanifesto.org/" target="_blank">
-  agile developer</a> who takes pride in my work.
+  <span>In other words, I'm an </span>
+  <a href="https://agilemanifesto.org/" target="_blank">agile developer</a>
+  <span> who takes pride in my work.</span>
   `;
 
   @state()

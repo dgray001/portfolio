@@ -33,7 +33,7 @@ export class DwgTextAnimation extends LitElement {
     a {
       align-items: center;
       color: rgb(51, 255, 255);
-      display: flex;
+      display: inline;
       flex-flow: row nowrap;
       gap: 0.5em;
       height: 2em;
