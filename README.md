@@ -4,7 +4,7 @@ A site to host a quick frontend portfolio
 
 ## Current Version
 
-v0.1n: Fixed hamburger button
+v0.2: Release_20231119
 
 ## GitHub Pages Notes
 
