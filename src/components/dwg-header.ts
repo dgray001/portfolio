@@ -151,6 +151,7 @@ export class DwgHeader extends LitElement {
       <div id="hamburger-overlay"></div>
       <div id="link-wrapper">
         <dwg-link text="Resume" src="resume" href="/files/resume.pdf"></dwg-link>
+        <dwg-link text="GCP Cert." src="cert" href="https://google.accredible.com/e70751dd-9a41-4046-b326-bd44008bba78"></dwg-link>
         <dwg-link text="LinkedIn" src="linkedin" href="https://www.linkedin.com/in/daniel-gray-8a6ba2108/"></dwg-link>
         <dwg-link text="GitHub" src="github" href="https://github.com/dgray001?tab=repositories"></dwg-link>
       </div>

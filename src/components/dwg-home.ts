@@ -1,7 +1,7 @@
 import {html, css, LitElement} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
 
-import {AnimationType} from './dwg-text-animation';
+import {AnimationType, DwgTextAnimation} from './dwg-text-animation';
 import {until, untilTimer} from '../scripts/util';
 import {DwgLink} from './dwg-link';
 
@@ -84,12 +84,19 @@ export class DwgHome extends LitElement {
 
   @state()
   body_text2 = `
-  In other words, I'm an agile developer who takes pride in my work.
+  In other words, I'm an <a href="https://agilemanifesto.org/" target="_blank">
+  agile developer</a> who takes pride in my work.
   `;
 
   @state()
   agile_manifesto: DwgLink = undefined;
 
+  @state()
+  title_el: DwgTextAnimation = undefined;
+  @state()
+  body_el1: DwgTextAnimation = undefined;
+  @state()
+  body_el2: DwgTextAnimation = undefined;
   @state()
   content_section: HTMLDivElement = undefined;
 
@@ -105,14 +112,18 @@ export class DwgHome extends LitElement {
 
   async connectedCallback() {
     super.connectedCallback();
-    await untilTimer(1200);
+    await untilTimer(600);
     await until(() => {
-      this.agile_manifesto = this.shadowRoot.querySelector('#hero-section dwg-link.body');
+      this.title_el = this.shadowRoot.querySelector('#title');
+      this.body_el1 = this.shadowRoot.querySelector('#body1');
+      this.body_el2 = this.shadowRoot.querySelector('#body2');
       this.content_section = this.shadowRoot.querySelector('#content-section');
-      return !!this.agile_manifesto && !!this.content_section;
+      return !!this.title_el && !!this.body_el1 && !!this.body_el2 && !!this.content_section;
     });
-    this.agile_manifesto.classList.add('show');
-    await untilTimer(900);
+    this.title_el.paused = false;
+    this.body_el1.paused = false;
+    this.body_el2.paused = false;
+    await untilTimer(1700);
     this.content_section.classList.add('show');
   }
 
@@ -121,37 +132,40 @@ export class DwgHome extends LitElement {
     <div id="hero-section">
       <dwg-text-animation
         id="title"
-        animation_delay="400"
+        animation_delay="100"
         animation_speed="1000"
-        justify animation_type="${AnimationType.FADE_IN}"
+        justify
+        paused
+        animation_type="${AnimationType.FADE_IN}"
         text="${this.title_text}"
       ></dwg-text-animation>
       <dwg-text-animation
+        id="body1"
         class="body"
-        animation_delay="700"
+        animation_delay="400"
         animation_speed="1000"
-        justify animation_type="${AnimationType.FADE_IN}"
+        justify
+        paused
+        animation_type="${AnimationType.FADE_IN}"
         text="${this.body_text1}"
       ></dwg-text-animation>
       <dwg-text-animation
+        id="body2"
         class="body"
-        animation_delay="1000"
+        animation_delay="600"
         animation_speed="1000"
-        justify animation_type="${AnimationType.FADE_IN}"
+        justify
+        paused
+        animation_type="${AnimationType.FADE_IN}"
         text="${this.body_text2}"
       ></dwg-text-animation>
-      <dwg-link
-        class="body"
-        href="https://agilemanifesto.org/"
-        text="Agile Manifesto"
-      ></dwg-link>
     </div>
     <div id="content-section">
-      <div class="content-header">Project Highlights</div>
+      <div class="content-header">Personal Project Highlights</div>
       <dwg-project project="fiddlesticks"></dwg-project>
       <dwg-project project="missio"></dwg-project>
       <dwg-project project="pocket_search"></dwg-project>
-      <div class="content-header">Additional Projects</div>
+      <div class="content-header">Additional Personal Projects</div>
       <dwg-project project="calculator"></dwg-project>
       <dwg-project project="cuf_site"></dwg-project>
       <dwg-project project="lnz"></dwg-project>

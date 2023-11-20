@@ -50,6 +50,9 @@ export class DwgTextAnimation extends LitElement {
   @property({type: Boolean})
   justify = false;
 
+  @property({type: Boolean})
+  paused = false;
+
   @state({hasChanged: (a: string, b: string) => a !== b})
   current_text = '';
 
@@ -58,7 +61,7 @@ export class DwgTextAnimation extends LitElement {
 
   async connectedCallback() {
     super.connectedCallback();
-    await untilTimer(this.animation_delay);
+    await until(() => !this.paused);
     this.animation_type = parseInt(this.animation_type.toString()) ?? AnimationType.UNKNOWN;
     await until(() => {
       this.wrapper = this.shadowRoot.querySelector('#wrapper');
@@ -85,7 +88,7 @@ export class DwgTextAnimation extends LitElement {
                 this.current_text = this.text;
               }, 600);
             }
-          }, 1);
+          }, this.animation_delay);
         break;
       case AnimationType.FADE_IN:
         this.wrapper.classList.add('fade-in');
@@ -93,7 +96,7 @@ export class DwgTextAnimation extends LitElement {
         this.current_text = this.text;
         setTimeout(() => {
           this.wrapper.classList.add('start');
-        }, 1);
+        }, this.animation_delay);
         break;
       default:
         this.current_text = this.text;
@@ -103,7 +106,7 @@ export class DwgTextAnimation extends LitElement {
 
   render() {
     return html`
-    <div id="wrapper">${this.current_text}</div>
+    <div id="wrapper" .innerHTML="${this.current_text}"></div>
     `;
   }
 }

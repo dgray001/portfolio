@@ -202,7 +202,7 @@ export class DwgProject extends LitElement {
           computations. Also includes a button/form library written from scratch
           with testing in JUnit.
           `,
-          link: 'https://github.com/dgray001/LNZ',
+          link: 'https://github.com/dgray001/LNZ_public',
           technologies: [
             {name: 'Java', type: 'language'},
             {name: 'JUnit', type: 'framework'},
