@@ -123,7 +123,7 @@ export class DwgHome extends LitElement {
     this.title_el.paused = false;
     this.body_el1.paused = false;
     this.body_el2.paused = false;
-    await untilTimer(1700);
+    await untilTimer(1500);
     this.content_section.classList.add('show');
   }
 

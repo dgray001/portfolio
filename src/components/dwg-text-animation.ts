@@ -29,6 +29,46 @@ export class DwgTextAnimation extends LitElement {
         transition-property: opacity, top;
       }
     }
+
+    a {
+      align-items: center;
+      color: rgb(51, 255, 255);
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 0.5em;
+      height: 2em;
+      width: fit-content;
+  
+      &:link, :link {
+        color: rgb(51, 255, 255);
+  
+        &:hover, :hover {
+          color: rgb(120, 255, 255);
+        }
+      }
+  
+      &:visited, :visited {
+        color: rgb(51, 180, 255);
+  
+        &:hover, :hover {
+          color: rgb(100, 240, 255);
+        }
+      }
+  
+      &:active, :active {
+        color: rgb(50, 140, 140) !important;
+      }
+  
+      > #img {
+        height: 1.6em;
+        max-height: 1.6em;
+        min-height: 1.6em;
+      }
+  
+      span {
+        line-height: 2em;
+      }
+    }
   }
   `;
 

@@ -15,6 +15,7 @@ export class DwgHeader extends LitElement {
     height: calc(2 * var(--font-size-largest));
     margin: 0 auto;
     max-width: 1500px;
+    overflow: hidden;
 
     > #name {
       display: block;
@@ -28,6 +29,7 @@ export class DwgHeader extends LitElement {
       height: 110vh;
       left: 0;
       opacity: 1;
+      overflow: hidden;
       position: absolute;
       top: 0;
       transition: opacity 0.7s ease;

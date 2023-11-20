@@ -4,7 +4,7 @@ A site to host a quick frontend portfolio
 
 ## Current Version
 
-v0.1m: Added cert in header
+v0.1n: Fixed hamburger button
 
 ## GitHub Pages Notes
 

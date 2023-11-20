@@ -18,6 +18,7 @@ export class DwgIndexPage extends LitElement {
     box-shadow: 0px 2px 2px 2px rgb(200, 200, 200);
     display: block;
     margin-bottom: 6px;
+    overflow: hidden;
   }
 
   #content {

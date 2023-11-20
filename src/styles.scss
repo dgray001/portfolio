@@ -27,6 +27,11 @@ body {
   overflow: hidden;
   padding: 0px;
 
+  #page-component {
+    overflow: hidden;
+    position: fixed;
+  }
+
   ::-webkit-scrollbar {
     width: 7px;
   }
