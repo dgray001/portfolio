@@ -4,7 +4,7 @@ A site to host a quick frontend portfolio
 
 ## Current Version
 
-v0.2d: Update resume
+v0.2e: Update cuf site
 
 ## GitHub Pages Notes
 

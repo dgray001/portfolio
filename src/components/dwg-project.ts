@@ -167,7 +167,7 @@ export class DwgProject extends LitElement {
           testing library, and data caching all in vanilla JS without external
           dependencies.
           `,
-          link: 'https://dgray001.github.io/',
+          link: 'https://cuf.org/',
           technologies: [
             {name: 'Javascript', type: 'language'},
             {name: 'PHP', type: 'language'},
