@@ -4,11 +4,11 @@ import {customElement, state} from 'lit/decorators.js';
 import {AnimationType, DwgTextAnimation} from './dwg-text-animation';
 import {until, untilTimer} from '../scripts/util';
 import {DwgLink} from './dwg-link';
+import {Project} from './dwg-project';
 
 import './dwg-link';
 import './dwg-text-animation';
 import './dwg-project';
-import { Project } from './dwg-project';
 
 @customElement('dwg-home')
 export class DwgHome extends LitElement {
@@ -73,20 +73,12 @@ export class DwgHome extends LitElement {
 
   @state()
   body_text1 = `
-  I'm a full-stack engineer with a background in molecular modeling. I am
-  passionate about writing efficient, scalable code and cultivating
-  instantiations of best practices. I believe in collaboration more than rigid
-  processes. I find more value in working software than I do in documentation.
-  I will advocate for user feedback before guessing how software should be used.
-  Lastly, I embrace challenges as opportunities for growth and continuous
-  learning rather than lamenting the loss of a short-sighted plan.
+  I'm a full-stack engineer with a background in molecular modeling. I am passionate about writing efficient, scalable code and cultivating instantiations of best practices. Embracing the unique complexities of each project by determining context-appropriate solutions and quickly filling gaps in my knowledge is where I thrive in my work.
   `;
 
   @state()
   body_text2 = `
-  <span>In other words, I'm an </span>
-  <a href="https://agilemanifesto.org/" target="_blank">agile developer</a>
-  <span> who takes pride in my work.</span>
+  Below is a summary of personal and freelance projects which demonstrate a wide breadth of knowledge and experience beyond my work as a TVC for Google.
   `;
 
   @state()
@@ -162,11 +154,11 @@ export class DwgHome extends LitElement {
       ></dwg-text-animation>
     </div>
     <div id="content-section">
-      <div class="content-header">Personal Project Highlights</div>
+      <div class="content-header">Project Highlights</div>
       <dwg-project project="fiddlesticks"></dwg-project>
       <dwg-project project="missio"></dwg-project>
       <dwg-project project="cuf_site"></dwg-project>
-      <div class="content-header">Additional Personal Projects</div>
+      <div class="content-header">Additional Projects</div>
       <dwg-project project="calculator"></dwg-project>
       <dwg-project project="pocket_search"></dwg-project>
       <dwg-project project="lnz"></dwg-project>

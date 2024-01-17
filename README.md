@@ -4,7 +4,7 @@ A site to host a quick frontend portfolio
 
 ## Current Version
 
-v0.2e: Update cuf site
+v0.3: Update portfolio and site
 
 ## GitHub Pages Notes
 
