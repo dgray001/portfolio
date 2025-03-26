@@ -108,7 +108,7 @@ export class DwgProject extends LitElement {
           esoteric games. Can reconnect you to your room or game if the your
           connection is lost.
           `,
-          link: 'https://fiddlesticks.live',
+          link: 'https://fiddlesticks.online',
           technologies: [
             {name: 'Golang', type: 'language'},
             {name: 'Typescript', type: 'language'},
@@ -117,6 +117,22 @@ export class DwgProject extends LitElement {
             {name: 'GCP', type: 'tool'},
             {name: 'Webpack', type: 'tool'},
             {name: 'Sass', type: 'tool'},
+          ],
+        };
+        break;
+      case 'chessonium':
+        this.project_data = {
+          title: 'Chess Engine',
+          description: `
+          Chess engine which utilizes bitboards, iterative deepening, negamax
+          search, quiescence, piece-square tables, configurable search and
+          evaluation functions, and transposition tables.
+          `,
+          link: 'https://github.com/dgray001/chessonium',
+          technologies: [
+            {name: 'Java', type: 'language'},
+            {name: 'JavaFX', type: 'framework'},
+            {name: 'Gradle', type: 'tool'},
           ],
         };
         break;

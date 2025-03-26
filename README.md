@@ -4,7 +4,7 @@ A site to host a quick frontend portfolio
 
 ## Current Version
 
-v0.3.1: Update package lock
+v0.4: Update for March 2025
 
 ## GitHub Pages Notes
 

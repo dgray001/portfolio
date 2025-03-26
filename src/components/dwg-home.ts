@@ -156,6 +156,7 @@ export class DwgHome extends LitElement {
     <div id="content-section">
       <div class="content-header">Project Highlights</div>
       <dwg-project project="fiddlesticks"></dwg-project>
+      <dwg-project project="chessonium"></dwg-project>
       <dwg-project project="missio"></dwg-project>
       <dwg-project project="cuf_site"></dwg-project>
       <div class="content-header">Additional Projects</div>
