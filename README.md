@@ -4,7 +4,7 @@ A site to host a quick frontend portfolio
 
 ## Current Version
 
-v0.4.1: Update CNAME
+v0.4.2: Update build
 
 ## GitHub Pages Notes
 
