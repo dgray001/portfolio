@@ -108,7 +108,7 @@ export class DwgProject extends LitElement {
           esoteric games. Can reconnect you to your room or game if the your
           connection is lost.
           `,
-          link: 'https://fiddlesticks.online',
+          link: 'https://fiddlesticks.cloud',
           technologies: [
             {name: 'Golang', type: 'language'},
             {name: 'Typescript', type: 'language'},

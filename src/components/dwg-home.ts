@@ -78,7 +78,7 @@ export class DwgHome extends LitElement {
 
   @state()
   body_text2 = `
-  Below is a summary of personal and freelance projects which demonstrate a wide breadth of knowledge and experience beyond my work as a TVC for Google.
+  Below is a summary of personal and freelance projects which demonstrate a wide breadth of knowledge and experience beyond my work as a professional software engineer.
   `;
 
   @state()
