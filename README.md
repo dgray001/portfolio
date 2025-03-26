@@ -4,7 +4,7 @@ A site to host a quick frontend portfolio
 
 ## Current Version
 
-v0.4: Update for March 2025
+v0.4.1: Update CNAME
 
 ## GitHub Pages Notes
 
@@ -32,4 +32,4 @@ Add AAAA records:
 
 Change CNAME record to dgray.github.io or HTTPS won't work
 
-A CNAME file with the custom domain (e.g. danielgray.site) should get added automatically
+A CNAME file with the custom domain (e.g. danielgray.online) should get added automatically
